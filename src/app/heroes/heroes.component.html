@@ -1,0 +1,30 @@
+<div class="d-flex justify-content-around">
+  <table class="m-1 table">
+    <tr>
+      <th>ID</th>
+      <th class="text-center">NAME</th>
+      <th class="text-right">AGE</th>
+    </tr>
+    <tr *ngFor="let hero of (heroes$ | async)" style="cursor: pointer;" [class.selected]="selectedHero === hero.id" (click)="selectHero(hero)">
+      <td> {{ hero.id }} </td>
+      <td> {{ hero.name }} </td>
+      <td class="text-right"> {{ hero.age }} </td>
+    </tr>
+  </table>
+</div>
+
+<form [formGroup]="rForm">
+  <input type="text" formControlName="name">
+  <input type="text" formControlName="surname">
+  <zz-child [parentForm]="rForm" selectedControlName="email1"></zz-child>
+  <zz-child [parentForm]="rForm" selectedControlName="email2"></zz-child>
+  <zz-child [parentForm]="rForm" selectedControlName="email3"></zz-child>
+  <button [disabled]="!rForm.valid" (click)="test(rForm.value)">pepito</button>
+</form>
+
+
+<div class="m-1 d-flex justify-content-around">
+  <span> {{ antihero.id }} </span>
+  <input type="text" [(ngModel)]="antihero.name" (ngModelChange)="test(antihero)" placeholder="Name" />
+  <span> {{ antihero.isAlreadyDead }} </span>
+</div>
