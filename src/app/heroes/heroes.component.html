@@ -19,10 +19,10 @@
   <input type="text" formControlName="surname">
   <div class="row">
     <div class="col-sm-2">
-      <zz-child></zz-child>
+      <zz-child [values]="values"></zz-child>
     </div>
   </div>
-  <button [disabled]="rForm.valid" (click)="test(rForm.value)">pepito</button>
+  <button [disabled]="rForm.valid" (click)="test()">pepito</button>
 </form>
 
 

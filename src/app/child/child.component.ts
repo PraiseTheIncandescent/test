@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { resumeData } from '../config/resume-data.config';
 
 @Component({
@@ -8,13 +8,8 @@ import { resumeData } from '../config/resume-data.config';
 })
 export class ChildComponent implements OnInit {
 
+  @Input() values;
   resumeData = resumeData;
-
-  values =
-    {
-      socks: 123,
-      clothes: 111
-    };
 
   constructor() { }
 

@@ -15,6 +15,12 @@ export class HeroesComponent implements OnInit {
   antihero: Antihero;
   selectedHero: number;
 
+  values =
+    {
+      socks: 123,
+      clothes: 111
+    };
+
   rForm: FormGroup;
 
   constructor(private heroService: HeroService, private fb: FormBuilder) { }
@@ -38,8 +44,8 @@ export class HeroesComponent implements OnInit {
     this.antihero.isAlreadyDead = hero.age > 15;
   }
 
-  test(antihero?: Antihero) {
-    console.warn({antihero});
+  test() {
+    this.values.clothes = 1000;
   }
 
 }
