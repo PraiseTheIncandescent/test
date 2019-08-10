@@ -1,11 +1,8 @@
-export class Hero {
-    id: number;
-    name: string;
-    age: number;
+import { Entity } from './entity';
+
+export class Hero extends Entity {
 
     constructor(id: number, name: string, age?: number) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
+        super(id, name, age);
     }
 }

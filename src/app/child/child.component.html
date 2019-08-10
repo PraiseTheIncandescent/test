@@ -1,3 +1,10 @@
-<form [formGroup]="parentForm">
-  <input type="text" [formControlName]="selectedControlName">
-</form>
+<div class="p-2 shadow">
+  <ng-container *ngFor="let data of resumeData">
+    <fieldset>
+      <span>{{data.text}}</span>
+      <span *ngIf="data.value" style="float: right">{{getImportByValue(data.value)}} {{data.format}}</span>
+      <span *ngIf="data.isSummatory" style="float: right">{{getSumatory(resumeData)}} {{data.format}}</span>
+    </fieldset>
+    <hr *ngIf="data.borderBottom" class="hr">
+  </ng-container>
+</div>

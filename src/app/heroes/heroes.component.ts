@@ -21,7 +21,7 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
     this.heroes$ = this.heroService.getHeroes();
-    this.antihero = new Antihero(1, 'CutmansSlayer', false);
+    this.antihero = new Antihero(1, 'CutmansSlayer', 14, false);
 
     this.rForm = this.fb.group({
       name: [null, Validators.required],
@@ -38,7 +38,7 @@ export class HeroesComponent implements OnInit {
     this.antihero.isAlreadyDead = hero.age > 15;
   }
 
-  test(antihero: Antihero) {
+  test(antihero?: Antihero) {
     console.warn({antihero});
   }
 

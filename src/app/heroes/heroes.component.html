@@ -5,7 +5,8 @@
       <th class="text-center">NAME</th>
       <th class="text-right">AGE</th>
     </tr>
-    <tr *ngFor="let hero of (heroes$ | async)" style="cursor: pointer;" [class.selected]="selectedHero === hero.id" (click)="selectHero(hero)">
+    <tr *ngFor="let hero of (heroes$ | async)" style="cursor: pointer;" [class.selected]="selectedHero === hero.id"
+      (click)="selectHero(hero)">
       <td> {{ hero.id }} </td>
       <td> {{ hero.name }} </td>
       <td class="text-right"> {{ hero.age }} </td>
@@ -16,10 +17,12 @@
 <form [formGroup]="rForm">
   <input type="text" formControlName="name">
   <input type="text" formControlName="surname">
-  <zz-child [parentForm]="rForm" selectedControlName="email1"></zz-child>
-  <zz-child [parentForm]="rForm" selectedControlName="email2"></zz-child>
-  <zz-child [parentForm]="rForm" selectedControlName="email3"></zz-child>
-  <button [disabled]="!rForm.valid" (click)="test(rForm.value)">pepito</button>
+  <div class="row">
+    <div class="col-sm-2">
+      <zz-child></zz-child>
+    </div>
+  </div>
+  <button [disabled]="rForm.valid" (click)="test(rForm.value)">pepito</button>
 </form>
 
 
